@@ -7,7 +7,7 @@ const Footer = ({primary, fontColor}) => {
       <Container>
         <Toolbar>
           <Typography variant="body1">
-            © 2023 Your Website Name. All rights reserved.
+            © 2023 Scholaris. All rights reserved.
           </Typography>
         </Toolbar>
       </Container>

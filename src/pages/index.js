@@ -1,5 +1,5 @@
 import { Avatar, Box } from '@mui/material'
-import React, {useState} from 'react'
+import React, {useState, useRef} from 'react'
 import Choice from '../components/Choice'
 import ColorButtons from '../components/ColorButtons'
 import Footer from '../components/Footer'
@@ -18,7 +18,50 @@ function Index() {
   const [bg, setBg] = useState("#F1FAEE")
   const [fontColor, setFontColor] = useState("#ffffff")
 
+  const primaryInput = useRef();
+  const secondaryInput = useRef();
+  const tertiaryInput = useRef();
+  const accentInput = useRef();
+  const bgInput = useRef();
+  const darkFontColorInput = useRef();
+  const lightFontColorInput = useRef();
+
   const handleOnUpdateColor = (type, color) => {
+    switch (type) {
+      case "primary":
+        primaryInput.current.value = ""
+        setPrimary(color)
+        break;
+      case "secondary":
+        secondaryInput.current.value = ""
+        setSecondary(color)
+        break;
+      case "tertiary":
+        tertiaryInput.current.value = ""
+        setTertiary(color)
+        break;
+      case "accent":
+        accentInput.current.value = ""
+        setAccent(color)
+        break;
+      case "bg":
+        bgInput.current.value = ""
+        setBg(color)
+        break;
+      case "darkFont":
+        darkFontColorInput.current.value = ""
+        setFontColor(color)
+        break;
+      case "lightFont":
+        lightFontColorInput.current.value = ""
+        setFontColor(color)
+        break;
+      default:
+        break;
+    }
+  }
+
+  const handleOnChangeColor = (type, color) => {
     switch (type) {
       case "primary":
         setPrimary(color)
@@ -49,7 +92,17 @@ function Index() {
   return (
     <Box sx={{display: "flex", flexDirection: "column"}}>
       <Box sx={{position: "sticky", top: 0, zIndex: 10}}>
-        <ColorButtons onUpdateColor={handleOnUpdateColor} />
+        <ColorButtons 
+          onUpdateColor={handleOnUpdateColor} 
+          onChangeColor={handleOnChangeColor}
+          primaryInput={primaryInput}
+          secondaryInput={secondaryInput}
+          tertiaryInput={tertiaryInput}
+          accentInput={accentInput}
+          bgInput={bgInput}
+          darkFontColorInput={darkFontColorInput}
+          lightFontColorInput={lightFontColorInput}
+        />
         <Navigation 
           primary={primary}
           bg={bg} 

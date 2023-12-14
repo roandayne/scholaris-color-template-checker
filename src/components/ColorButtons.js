@@ -1,10 +1,10 @@
 
-import { Button, ButtonGroup } from '@mui/material'
+import { Button, ButtonGroup, TextField } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
 
 function ColorButtons(props) {
-  const {onUpdateColor} = props
+  const {onUpdateColor, onChangeColor, primaryInput, secondaryInput, tertiaryInput, accentInput, bgInput, darkFontColorInput, lightFontColorInput} = props
 
   return (
     <Box
@@ -36,6 +36,16 @@ function ColorButtons(props) {
         <Button onClick={() => onUpdateColor("darkFont", "#01172F")}>R Dark Font</Button>
         <Button onClick={() => onUpdateColor("lightFont", "#fefefe")}>R Light Font</Button>
       </ButtonGroup>
+      <Box sx={{margin: "12px", width: "74vw", display: "flex", alignItems: "center"}}>
+        <TextField inputRef={primaryInput} size="small" onChange={(event) => onChangeColor("primary", event.target.value)} id="outlined-basic" label="Primary" variant="outlined" />
+        <TextField inputRef={secondaryInput} size="small" onChange={(event) => onChangeColor("secondary", event.target.value)} id="outlined-basic" label="Secondary" variant="outlined" />
+        <TextField inputRef={tertiaryInput} size="small" onChange={(event) => onChangeColor("tertiary", event.target.value)} id="outlined-basic" label="Tertiary" variant="outlined" />
+        <TextField inputRef={accentInput} size="small" onChange={(event) => onChangeColor("accent", event.target.value)} id="outlined-basic" label="Accent" variant="outlined" />
+        <TextField inputRef={bgInput} size="small" onChange={(event) => onChangeColor("bg", event.target.value)} id="outlined-basic" label="Bg" variant="outlined" />
+        <TextField inputRef={darkFontColorInput} size="small" onChange={(event) => onChangeColor("darkFont", event.target.value)} id="outlined-basic" label="Dark Font" variant="outlined" />
+        <TextField inputRef={lightFontColorInput} size="small" onChange={(event) => onChangeColor("lightFont", event.target.value)} id="outlined-basic" label="Light Font" variant="outlined" />
+
+      </Box>
     </Box>
   )
 }

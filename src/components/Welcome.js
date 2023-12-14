@@ -44,7 +44,7 @@ const Welcome = (props) => {
         }}
       >
         <Typography variant="h2" component="div" gutterBottom sx={{color: fontColor}}>
-          Welcome to Scholarship Pooling
+          Welcome to <span style={{color: accent}}>Scholaris</span>
         </Typography>
         <Typography variant="body2" align='center' sx={{color: fontColor}}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet purus nulla. Suspendisse egestas erat eu lectus semper, quis sollicitudin diam blandit. Sed rhoncus, nisi ac sollicitudin ultricies, ante turpis fermentum elit, id euismod dolor augue mollis dui. Integer efficitur diam sed tellus feugiat, et posuere tortor vestibulum. 

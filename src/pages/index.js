@@ -117,7 +117,7 @@ function Index() {
           status={showComponent ? "Hide" : "Show"}
         />
       </Box>
-      <Choice />
+      <Choice accent={accent} secondary={secondary} bg={bg} />
       <Welcome primary={primary} accent={accent} fontColor={fontColor} />
       <Newsletter accent={accent} />
       <Guides primary={primary} secondary={secondary} tertiary={tertiary} bg={bg}/>

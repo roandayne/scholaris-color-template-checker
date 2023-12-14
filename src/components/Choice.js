@@ -1,56 +1,33 @@
-import { Box, Card, CardActionArea, CardContent, Typography } from '@mui/material'
+import { Box, Button, ButtonGroup, Card, CardActionArea, CardContent, Typography } from '@mui/material'
 import React from 'react'
 
-const Choice = () => {
+const Choice = (props) => {
+  const {secondary, accent, bg} = props
   const handleClick = () => {
 
   }
-
-  const cardStyle = {
-    width: '300px', // Set your desired width
-    height: '200px', // Set your desired height
-  };
 
   return (
     <Box 
       sx={{
         display: "flex",
+        flexDirection: "column",
         justifyContent: "center",
-        margin: "24px"
+        alignItems: "center",
+        padding: "24px",
+        backgroundColor: bg
       }}
     >
-      <Card 
-        style={cardStyle}
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          margin: "24px"
-        }} 
-      >
-        <CardActionArea onClick={handleClick}>
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              I am a student
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-      </Card>
-      <Card 
-        style={cardStyle} 
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          margin: "24px"
-        }} 
-      >
-        <CardActionArea onClick={handleClick}>
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              I am a SGO (Scholarship Granting Organization)
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-      </Card>
+      <Typography variant="h4" align="center" sx={{margin: "24px"}}>
+        Dream, Achieve, Succeed: <br /> Your Journey Begins with <span style={{color: accent}}>Scholaris</span>.
+      </Typography>
+      <Typography align="center" variant="h6" sx={{margin: "24px"}}>
+        Begin your journey now. <br /> Are you an aspiring student or a scholarship-granting organization?
+      </Typography>
+      <ButtonGroup>
+        <Button variant="contained" size="large" sx={{margin: "24px", backgroundColor: secondary}}>Student</Button>
+        <Button variant="contained" size="large" sx={{margin: "24px", backgroundColor: secondary}}>Scholarship Granting Organization (SGO)</Button>
+      </ButtonGroup>
     </Box>
   )
 }

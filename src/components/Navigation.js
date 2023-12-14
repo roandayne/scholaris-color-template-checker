@@ -14,12 +14,13 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { ToggleButton, ToggleButtonGroup } from '@mui/material';
 
 const drawerWidth = 240;
 const navItems = ['Home', 'About', 'Contact'];
 
 function DrawerAppBar(props) {
-  const { window, primary, bg, fontColor } = props;
+  const { window, primary, fontColor, onClickShowComponent, status } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -68,10 +69,15 @@ function DrawerAppBar(props) {
             Scholaris meow
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+            <ToggleButtonGroup onChange={onClickShowComponent}>
+              <ToggleButton sx={{color: "white"}}>
+                {status} Colors Section
+              </ToggleButton>
+            </ToggleButtonGroup>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: fontColor }}>
-                {item}
-              </Button>
+                <Button key={item} sx={{ color: fontColor }}>
+                  {item}
+                </Button>
             ))}
           </Box>
         </Toolbar>

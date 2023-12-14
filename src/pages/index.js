@@ -17,6 +17,7 @@ function Index() {
   const [accent, setAccent] = useState("#E63946")
   const [bg, setBg] = useState("#F1FAEE")
   const [fontColor, setFontColor] = useState("#ffffff")
+  const [showComponent, setShowComponent] = useState(true)
 
   const primaryInput = useRef();
   const secondaryInput = useRef();
@@ -89,10 +90,14 @@ function Index() {
     }
   }
 
+  const handleOnClickShowComponent = () => {
+    setShowComponent(!showComponent);
+  }
+
   return (
     <Box sx={{display: "flex", flexDirection: "column"}}>
       <Box sx={{position: "sticky", top: 0, zIndex: 10}}>
-        <ColorButtons 
+        <ColorButtons
           onUpdateColor={handleOnUpdateColor} 
           onChangeColor={handleOnChangeColor}
           primaryInput={primaryInput}
@@ -102,11 +107,14 @@ function Index() {
           bgInput={bgInput}
           darkFontColorInput={darkFontColorInput}
           lightFontColorInput={lightFontColorInput}
+          showComponent={showComponent}
         />
         <Navigation 
           primary={primary}
           bg={bg} 
-          fontColor={fontColor} 
+          fontColor={fontColor}
+          onClickShowComponent={handleOnClickShowComponent}
+          status={showComponent ? "Hide" : "Show"}
         />
       </Box>
       <Choice />

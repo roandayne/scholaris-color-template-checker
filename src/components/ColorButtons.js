@@ -1,10 +1,16 @@
 
 import { Button, ButtonGroup, TextField } from '@mui/material'
 import { Box } from '@mui/system'
-import React from 'react'
+import React, {useState} from 'react'
 
 function ColorButtons(props) {
-  const {onUpdateColor, onChangeColor, primaryInput, secondaryInput, tertiaryInput, accentInput, bgInput, darkFontColorInput, lightFontColorInput} = props
+  const {onUpdateColor, onChangeColor, primaryInput, secondaryInput, tertiaryInput, accentInput, bgInput, darkFontColorInput, lightFontColorInput, showComponent} = props
+  const [clicked, setClicked] = useState("")
+
+  const handleClick = (value) => {
+    setClicked(value)
+    console.log(value)
+  }
 
   return (
     <Box
@@ -13,13 +19,13 @@ function ColorButtons(props) {
         width: "100%", 
         padding: "24px",
         backgroundColor: "white", 
-        display: "flex", 
+        display: showComponent ? "flex" : "none", 
         flexDirection: "column",
         alignItems: "center",
       }}
     >
       <ButtonGroup variant="outlined" sx={{margin: "12px"}} aria-label="outlined primary button group">
-        <Button onClick={() => onUpdateColor("primary", "#2972FF")}>S Primary</Button>
+        <Button onClick={() =>onUpdateColor("primary", "#2972FF")}>S Primary</Button>
         <Button onClick={() => onUpdateColor("secondary", "#A9D4ED")}>S Secondary</Button>
         <Button onClick={() => onUpdateColor("tertiary", "#E7AE1A")}>S Tertiary</Button>
         <Button onClick={() => onUpdateColor("accent", "#D33F49")}>S Accent</Button>
@@ -44,7 +50,6 @@ function ColorButtons(props) {
         <TextField inputRef={bgInput} size="small" onChange={(event) => onChangeColor("bg", event.target.value)} id="outlined-basic" label="Bg" variant="outlined" />
         <TextField inputRef={darkFontColorInput} size="small" onChange={(event) => onChangeColor("darkFont", event.target.value)} id="outlined-basic" label="Dark Font" variant="outlined" />
         <TextField inputRef={lightFontColorInput} size="small" onChange={(event) => onChangeColor("lightFont", event.target.value)} id="outlined-basic" label="Light Font" variant="outlined" />
-
       </Box>
     </Box>
   )

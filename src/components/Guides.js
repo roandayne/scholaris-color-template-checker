@@ -4,13 +4,14 @@ import Guide from './Guide'
 
 const Guides = ({primary, secondary, tertiary, bg}) => {
   return (
-    <Container 
+    <Container
+      maxWidth="xl"
+      width="100%"
       sx={{
-        marginTop: "10vh",
+        margin: "10vh 0 0 0",
         paddingTop: "5vh", 
-        paddingBottom: "10vh", 
-        maxWidth: "100vw",
-        backgroundColor: tertiary
+        paddingBottom: "10vh",
+        backgroundColor: tertiary,
       }}
     >
       <Typography variant='h3' margin={"36px"}>Feature Guides</Typography>

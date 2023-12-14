@@ -11,7 +11,7 @@ function ColorButtons(props) {
       position="sticky"
       sx={{
         width: "100%", 
-        height: "124px",
+        padding: "24px",
         backgroundColor: "white", 
         display: "flex", 
         flexDirection: "column",

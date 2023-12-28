@@ -1,4 +1,4 @@
-import { Box, Button, Container, Paper, Typography } from '@mui/material'
+import { Box, Button, Container, Paper, Typography, Tooltip } from '@mui/material'
 import React from 'react'
 
 import backgroundImage from "../static/images/graduation-cap.jpg"
@@ -46,9 +46,18 @@ const Welcome = (props) => {
         <Typography variant="h2" component="div" gutterBottom sx={{color: fontColor}}>
           Welcome to <span style={{color: accent}}>Scholaris</span>
         </Typography>
-        <Typography variant="body2" align='center' sx={{color: fontColor}}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet purus nulla. Suspendisse egestas erat eu lectus semper, quis sollicitudin diam blandit. Sed rhoncus, nisi ac sollicitudin ultricies, ante turpis fermentum elit, id euismod dolor augue mollis dui. Integer efficitur diam sed tellus feugiat, et posuere tortor vestibulum. 
-        </Typography>
+        <Tooltip title="
+          Header Content
+          - Highlight the aim of the app
+          - Why use the app?
+          - Display the specific usage
+          - What issue does the app fixes?
+          - What help this app can give the user?
+        ">
+          <Typography variant="body2" align='center' sx={{color: fontColor, fontSize: '1.25rem'}}>
+            Empowering Dreams, Igniting Futures: <br/> Your Path to Knowledge, Our Commitment to Support
+          </Typography>
+        </Tooltip>
       </Container>
       <Button 
         size="large" 

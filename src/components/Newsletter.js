@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextField, Button, Container, Typography, FormControl, Box } from '@mui/material';
+import { TextField, Button, Container, Typography, FormControl, Box, Tooltip } from '@mui/material';
 
 const Newsletter = (props) => {
   const {accent} = props
@@ -21,15 +21,24 @@ const Newsletter = (props) => {
         justifyContent: "center"
       }}
     >
-      <Box width="50vw">
+      <Tooltip title="
+        Newletter Content
+        -understand the audience
+        -provide relevant information
+        -deliver in competitive way
+        -Inform or Educate: Share industry insights, news, or educational content.
+        -Promote: Highlight new products, services, or promotions.
+        -Connect: Share behind-the-scenes stories, team updates, or customer spotlights
+      ">
+        <Box width="50vw">
         <Typography variant="h4" align="center" gutterBottom>
           Stay Updated from our Newsletters
         </Typography>
         <Typography variant="h5" align="center" gutterBottom sx={{ marginTop: "48px"}}>
-          Join and get latest news and features
+          Join Now, Stay Informed
         </Typography>
         <Typography variant="body2" align="center" gutterBottom sx={{marginBottom: "48px"}}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet purus nulla. Suspendisse egestas erat eu lectus semper, quis sollicitudin diam blandit. 
+          Unlock Exclusive Updates for a Brighter Tomorrow.
         </Typography>
         <form onSubmit={handleSubmit}>
           <FormControl fullWidth>
@@ -50,7 +59,9 @@ const Newsletter = (props) => {
             Subscribe
           </Button>
         </form>
-      </Box>
+        </Box>
+      </Tooltip>
+      
       
     </Container>
   );

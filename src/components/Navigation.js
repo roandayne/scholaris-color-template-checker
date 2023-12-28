@@ -17,7 +17,7 @@ import Button from '@mui/material/Button';
 import { ToggleButton, ToggleButtonGroup } from '@mui/material';
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact'];
+const navItems = ['Newsletter'];
 
 function DrawerAppBar(props) {
   const { window, primary, fontColor, onClickShowComponent, status } = props;
@@ -66,14 +66,14 @@ function DrawerAppBar(props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block', color: fontColor } }}
           >
-            Scholaris meow
+            Scholaris
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            <ToggleButtonGroup onChange={onClickShowComponent}>
+            {/* <ToggleButtonGroup onChange={onClickShowComponent}>
               <ToggleButton sx={{color: "white"}}>
                 {status} Colors Section
               </ToggleButton>
-            </ToggleButtonGroup>
+            </ToggleButtonGroup> */}
             {navItems.map((item) => (
                 <Button key={item} sx={{ color: fontColor }}>
                   {item}

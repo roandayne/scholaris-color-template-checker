@@ -11,13 +11,19 @@ import Welcome from '../components/Welcome'
 import '../style.css'
 
 function Index() {
-  const [primary, setPrimary] = useState("#457B9D")
-  const [secondary, setSecondary] = useState("#E63946")
+  // const [primary, setPrimary] = useState("#457B9D")
+  // const [secondary, setSecondary] = useState("#E63946")
+  // const [tertiary, setTertiary] = useState("#A8DADC")
+  // const [accent, setAccent] = useState("#E63946")
+  // const [bg, setBg] = useState("#F1FAEE")
+  // const [fontColor, setFontColor] = useState("#ffffff")
+  const [primary, setPrimary] = useState("#002147")
+  const [secondary, setSecondary] = useState("#1AA5D8")
   const [tertiary, setTertiary] = useState("#A8DADC")
-  const [accent, setAccent] = useState("#E63946")
-  const [bg, setBg] = useState("#F1FAEE")
+  const [accent, setAccent] = useState("#F36B3B")
+  const [bg, setBg] = useState("#ffffff")
   const [fontColor, setFontColor] = useState("#ffffff")
-  const [showComponent, setShowComponent] = useState(true)
+  const [showComponent, setShowComponent] = useState(false)
 
   const primaryInput = useRef();
   const secondaryInput = useRef();
